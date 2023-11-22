@@ -24,9 +24,11 @@ namespace GUI
             employeeBUS = new EmployeeBUS(role);
 
             // cbbTenNV.DataSource = employeeBUS.getAllManager();
-            cbbTenNV.DataSource = employeeBUS.getAllPartTime();
+            /*cbbTenNV.DataSource = employeeBUS.getAllPartTime();
             cbbTenNV.ValueMember = "ID";
-            cbbTenNV.DisplayMember = "Display";
+            cbbTenNV.DisplayMember = "Display";*/
+            
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -52,10 +54,14 @@ namespace GUI
                 else
                 {
                     MessageBox.Show("Sửa không thành công. Lỗi: '" + loginBUS.err + "'");
+                    Console.WriteLine("A");
+
+
                 }
             }
             else //tHÊM TK
             {
+
                 loginDTO = new LoginDTO(txtTenTK.Text, txtMK.Text, manv);
                 if (loginBUS.AddAccount(loginDTO))
                 {
